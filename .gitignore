@@ -1,3 +1,5 @@
 # Project exclude paths
 /ntpclock-client/target/
 /ntpclock-server/target/
+*.iml
+.idea
