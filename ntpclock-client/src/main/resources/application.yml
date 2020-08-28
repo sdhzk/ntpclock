@@ -1,0 +1,36 @@
+app:
+  version: 1.0
+  name: NTPClockClient
+server:
+  port: 1234
+spring:
+  jackson:
+    date-format: yyyy-MM-dd HH:mm:ss
+    time-zone: GMT+8
+springfox:
+  documentation:
+    enabled: true
+logging:
+  file:
+    name: ntpclock.log
+task:
+  # ntp客户端同步时间间隔 默认：10s
+  timesync:
+    cron: 0/10 * * * * ?
+  # 同步ntp服务配置时间间隔 默认：5s
+  configsync:
+    cron: 0/5 * * * * ?
+  # ntp客户端时间上传间隔 默认：1s
+  timeupload:
+    cron: 0/1 * * * * ?
+# 获取ntp配置地址
+config:
+  server:
+    url: http://localhost:8080/config
+# 上传ntp客户端时间地址
+upload:
+  server:
+    url:  http://localhost:8080/upload
+# 自定义客户端ip地址
+client:
+  ip:

@@ -1,0 +1,12 @@
+app:
+  version: 1.0
+  name: NTPClockServer
+server:
+  port: 8080
+spring:
+  jackson:
+    date-format: yyyy-MM-dd HH:mm:ss
+    time-zone: GMT+8
+ntpserver:
+  default:
+    ip: 172.39.8.49
